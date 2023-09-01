@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import EnergiajuomaLista from './EnergiajuomaLista';
 import Typography from '@mui/material/Typography';
+import EnergiaLomake from "./EnergiaLomake";
 
 
 function HaeEnergiajuomat() {
@@ -30,7 +31,13 @@ function HaeEnergiajuomat() {
     }
 
     if (energiat.length > 0) {
-        return ( <EnergiajuomaLista energiat={ energiat }/>);
+        return ( 
+            <div>
+                <EnergiajuomaLista energiat={ energiat }/>
+                <EnergiaLomake />                
+            </div>
+
+        );
     }
 
     return ( <Typography>Yhtään energiajuomaa ei ole</Typography>)
